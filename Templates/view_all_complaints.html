@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2>All Complaints</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Landmark</th>
+                <th scope="col">Bin Number</th>
+                <th scope="col">Complaint</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for complaint in complaints %}
+                <tr>
+                    <td>{{ complaint.complaint_id }}</td>
+                    <td>{{ complaint.c_landmark }}</td>
+                    <td>{{ complaint.bin_number }}</td>
+                    <td >
+                                        <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Complaint Description 
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Complaint</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {{ complaint.c_complant }}
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-dark " data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-outline-success ">Understood</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </td>
+                    {% if complaint.status %}
+                    <td class="text-success ">Cleaned</td>
+                    {% else %}
+                    <td class="text-danger">Pending</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

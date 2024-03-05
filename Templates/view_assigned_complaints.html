@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Assigned Complaints</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Bin Name</th>
+                <th scope="col">Region</th>
+                <th scope="col">Time</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Day</th>
+                <th scope="col">Bin Color</th>
+                <th scope="col">Bin Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for complaint in assigned_complaints %}
+                <tr>
+                    <td>{{ complaint.Bin_id_Bin_name }}</td>
+                    <td>{{ complaint.Location__region }}</td>
+                    <td>{{ complaint.Time }}</td>
+                    <td>{{ complaint.Date }}</td>
+                    <td>{{ complaint.status }}</td>
+                    <td>{{ complaint.Bin_id__collections_day__day }}</td>
+                    <td>{{ complaint.Bin_id__Bin_color__bin_color }}</td>
+                    <td>{{ complaint.Bin_id__Bin_location__region }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

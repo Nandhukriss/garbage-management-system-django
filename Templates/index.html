@@ -1,0 +1,237 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- CSS Files -->
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/testimonials/testimonial-4/assets/css/testimonial-4.css" />
+<style>/* ---- reset ---- */
+ /*
+  ---- particles.js container ---- */ #particles-js{ width: 100%; height: 100%; 
+  background-color: #198754; background-image: url("https://clipground.com/images/garbage-truck-png-2.png");
+   background-repeat: no-repeat; background-size: 20%; background-position: 50% 50%; } /* ---- stats.js ---- */
+    .count-particles{ background: #000022; 
+	 text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px;
+	  font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+	  #content-wrapper {
+    display: none;
+  }
+  #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color:#198754; /* Change the background color and opacity as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+	.spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-top: 4px solid #eee; /* Change the spinner color */
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+
+	  </style>
+
+	<div id="content-wrapper ">
+		<h1 class="display-1 text-center fw-bold text-light ">Garbage Management System</h1>
+		 <div id="particles-js"></div>  
+	</div>	
+  <!-- Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+	</section> 
+	<!-- //banner -->
+	<div class="container px-4 py-5" id="hanging-icons">
+		<h2 class="pb-2 display-6 mb-2 text-light fw-bold ">Garbage Management <span>Easy to Manage Waste</span></h2>
+		<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+		  <div class="col d-flex align-items-start">
+			<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+
+			</div>
+			<div class="card">
+
+				<div class="bg-light rounded-1 p-3 card-content" style="height: 350px;cursor: pointer;">
+				  <h3 class="fs-2 text-body-emphasis"> <span class="me-3"><i class="fa-solid fa-dumpster"></i></span> Waste</h3>				
+				  <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.Waste' is any unwanted or unuseful material. These are objects that have been discarded since these materials aren't functioning anymore. Waste can be in any form (liquid, solid or gas), although generally, waste is solid.</p>
+	
+				</div>
+			</div>
+		  </div>
+		  <div class="col d-flex align-items-start">
+			<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+
+			</div>
+			<div class="bg-light rounded-1 p-3 "  style="height: 350px;cursor: pointer;">
+			  <h3 class="fs-2 text-body-emphasis"><span class="me-3"><i class="fa-solid fa-dumpster"></i></span>Waste Management</h3>
+			  <p>A waste management system is the strategy an organization uses to dispose, reduce, reuse, and prevent waste. Possible waste disposal methods are recycling, composting, incineration, landfills, bioremediation, waste to energy, and waste minimization.
+
+			  </p>
+
+			</div>
+		  </div>
+		  <div class="col d-flex align-items-start">
+			<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+
+			</div>
+			<div class="bg-light rounded-1 p-3"  style="height: 350px;cursor: pointer;">
+			  <h3 class="fs-2 text-body-emphasis"><span class="me-3"><i class="fa-solid fa-dumpster"></i></span>Recycling</h3>
+			  <p>Recycling of waste is defined in the Waste Framework Directive as any recovery operation by which waste materials are reprocessed into products, materials or substances whether for the original or other purposes
+
+			  </p>
+
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+<section class="py-3 py-md-5 py-xl-8">
+	<div class="container">
+	  <div class="row">
+		<div class="col-12 col-md-10 col-lg-8">
+		  <h3 class="display-6 mb-2 text-light fw-bold">Testimonials</h3>
+		  <h2 class="mb-4 text-black ">Our valued clients' testimonials speak volumes about our work's power.</h2>
+		</div>
+	  </div>
+	</div>
+  
+	<div class="container overflow-hidden">
+	  <div class="row gy-3 gy-lg-4">
+		<div class="col-12 col-lg-6">
+		  <div class="card">
+			<div class="card-body p-4 p-xxl-5">
+			  <div class="bsb-ratings text-warning mb-3" data-bsb-star="5" data-bsb-star-off="0"></div>
+			  <blockquote class="bsb-blockquote-icon mb-3">Nam ultricies, ex lacinia dapibus faucibus, sapien ipsum euismod massa, at aliquet erat turpis quis diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</blockquote>
+			  <figure class="d-flex align-items-center m-0 p-0">
+				<img class="img-fluid rounded rounded-circle m-0 border border-5"   width=100loading="lazy" src="https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1709406413~exp=1709407013~hmac=98f110d5a77b25bb26168d2fad8bad83fce27fad42b6bf5a4be03d61049fb913" alt="">
+				<figcaption class="ms-3">
+				  <h4 class="mb-1 h5">Luna John</h4>
+				  <h5 class="fs-6 text-secondary mb-0">UX Designer</h5>
+				</figcaption>
+			  </figure>
+			</div>
+		  </div>
+		</div>
+		<div class="col-12 col-lg-6">
+		  <div class="card">
+			<div class="card-body p-4 p-xxl-5">
+			  <div class="bsb-ratings text-warning mb-3" data-bsb-star="4" data-bsb-star-off="1"></div>
+			  <blockquote class="bsb-blockquote-icon mb-3">Nam ultricies, ex lacinia dapibus faucibus, sapien ipsum euismod massa, at aliquet erat turpis quis diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</blockquote>
+			  <figure class="d-flex align-items-center m-0 p-0">
+				<img class="img-fluid rounded rounded-circle m-0 border border-5" width=100 loading="lazy" src="https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1709406413~exp=1709407013~hmac=98f110d5a77b25bb26168d2fad8bad83fce27fad42b6bf5a4be03d61049fb913" alt="">
+				<figcaption class="ms-3">
+				  <h4 class="mb-1 h5">Mark Smith</h4>
+				  <h5 class="fs-6 text-secondary mb-0">Marketing Specialist</h5>
+				</figcaption>
+			  </figure>
+			</div>
+		  </div>
+		</div>
+		<div class="col-12 col-lg-6">
+		  <div class="card">
+			<div class="card-body p-4 p-xxl-5">
+			  <div class="bsb-ratings text-warning mb-3" data-bsb-star="3" data-bsb-star-off="2"></div>
+			  <blockquote class="bsb-blockquote-icon mb-3">Nam ultricies, ex lacinia dapibus faucibus, sapien ipsum euismod massa, at aliquet erat turpis quis diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</blockquote>
+			  <figure class="d-flex align-items-center m-0 p-0">
+				<img class="img-fluid rounded rounded-circle m-0 border border-5" width=100 loading="lazy" src="https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1709406413~exp=1709407013~hmac=98f110d5a77b25bb26168d2fad8bad83fce27fad42b6bf5a4be03d61049fb913" alt="">
+				<figcaption class="ms-3">
+				  <h4 class="mb-1 h5">Michael Wilson</h4>
+				  <h5 class="fs-6 text-secondary mb-0">SEO Expert</h5>
+				</figcaption>
+			  </figure>
+			</div>
+		  </div>
+		</div>
+		<div class="col-12 col-lg-6">
+		  <div class="card">
+			<div class="card-body p-4 p-xxl-5">
+			  <div class="bsb-ratings text-warning mb-3" data-bsb-star="5" data-bsb-star-off="0"></div>
+			  <blockquote class="bsb-blockquote-icon mb-3">Nam ultricies, ex lacinia dapibus faucibus, sapien ipsum euismod massa, at aliquet erat turpis quis diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</blockquote>
+			  <figure class="d-flex align-items-center m-0 p-0">
+				<img class="img-fluid rounded rounded-circle m-0 border border-5" width=100 loading="lazy" src="https://img.freepik.com/free-vector/illustration-businessman_53876-5856.jpg?w=740&t=st=1709406413~exp=1709407013~hmac=98f110d5a77b25bb26168d2fad8bad83fce27fad42b6bf5a4be03d61049fb913" alt="">
+				<figcaption class="ms-3">
+				  <h4 class="mb-1 h5">Luke Reeves</h4>
+				  <h5 class="fs-6 text-secondary mb-0">Sales Manager</h5>
+				</figcaption>
+			  </figure>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+<section class="questions container-fluid my-2" id="faq">
+    <h1 class="display-3 text-center hidden fw-bold  tex-light">FAQ's</h1>
+    <section class="two-players d-flex  justify-content-center  align-items-center ">
+        <img src="https://th.bing.com/th/id/R.27e579d58d16149fc8d89bbb485f9983?rik=QLRCiDdEQxrkAw&pid=ImgRaw&r=0" alt="players" width="720">
+    </section>
+
+    <div class="accordion  " id="accordionExample">
+        <div class="accordion-item ">
+          <h2 class="accordion-header">
+            <button class="accordion-button bg-success text-light " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            #1 Can I hold a tournament at your turf?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Yes. We absolutely love it when people fight! We mean, for the trophy. Physical fights are for the Fight Club! Ouch, did we just break Rule no. 1? Ok, please get in touch with us to avail of our tournament organising services.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item ">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-success text-light " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              #2 Can I eat/drink on the turf?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Hey, we love food too! And we go to the pub for that. Not to the turf.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item ">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-success text-light " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              #3 Can we play with season ball?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>No. Please, just no! Tennis balls only.
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+		<!-- //news -->
+ <script defer src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script  defer src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+<script>
+window.addEventListener('load', function () {
+      // Code to hide the loader and show the content wrapper
+	  document.getElementById('loader').style.display = 'none';
+      document.getElementById('content-wrapper').style.display = 'block';
+})
+	 document.addEventListener('DOMContentLoaded', function () {
+
+		 particlesJS("particles-js", {"particles":{"number":{"value":160,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":1,"opacity_min":0,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":4,"size_min":0.3,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":1,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":600}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"bubble"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":250,"size":0,"duration":2,"opacity":0,"speed":3},"repulse":{"distance":400,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);
+		})
+</script>
+	{% endblock content %}

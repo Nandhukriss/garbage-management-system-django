@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<body>
+	<h1 class="display-3 text-center ">Login</h1>
+	<div class="clear-loading spinner">
+		<span></span>
+	</div>
+	<div class="w3ls-login box box--big container h-100 ">
+		<form onsubmit ="emailValidation() && passwordValidation() && cpasswordValidation()" method="POST"  id="myForm" >
+			{% csrf_token %}
+			<div class="agile-field-txt ">
+				<input type="text" name="email" class="form-control " placeholder="Enter User Email"  onkeyup='emailValidation(this)' required/>
+				<span class="error-msg" id="email"> </span><br>
+
+
+			</div>
+			<div class="agile-field-txt">
+				<input type="password" name="password" placeholder="Enter Password" onkeyup='passwordValidation(this)' class="form-control" required/>
+				<span class="error-msg" id="password"></span><br>
+
+				<div class="agile_label">
+					<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
+					<label class="check" for="check3">Show password</label>
+				</div>
+				<div class="agile-right ">
+					<a href="forgotPassword/" class="text-light ">Forgot Password?</a>
+				</div>
+			</div>
+
+				<input type="submit"  class="btn btn-light  "value="LOGIN">
+		</form>
+		<div>
+			{% for message in messages %}
+			<h3>{{message}}</h3>
+			{% endfor %}
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+function emailValidation(inputTxt){
+    // ^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$
+    var regx = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    var textField = document.getElementById("email");
+
+    if(inputTxt.value != '' ){
+        if(inputTxt.value.match(regx)){
+            textField.textContent = '';
+            textField.style.color = "green";
+        }else{
+            textField.textContent = 'email is not valid!!!';
+            textField.style.color = "red";
+        }
+    }else{
+        textField.textContent = 'your input is empty';
+        textField.style.color = "red";
+    }
+}
+function passwordValidation(inputTxt){
+
+    var regx = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}/;
+    var textField = document.getElementById("password");
+
+    if(inputTxt.value != '' ){
+            if(inputTxt.value.match(regx)){
+                textField.textContent = '';
+                textField.style.color = "green";
+
+            }else{
+                textField.textContent = 'Must contain at least one number and one uppercase and lowercase letter and aleast 5 characters';
+                textField.style.color = "red";
+            }
+    }else{
+        textField.textContent = 'your input is empty';
+        textField.style.color = "red";
+    }
+}
+
+</script>
+</body>
+</html>
+{% endblock %}
