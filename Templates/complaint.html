@@ -1,55 +1,41 @@
+<!-- complaint.html -->
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title> Complaint Register  </title>
-    <!-- Meta tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta  charset="utf-8" />
-    <meta name="keywords" content="  complaint Register Form Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
-      />
-    <script>
-      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
-    </script>
-    <!-- Meta tags -->
-    <!--stylesheets-->
-    <link href="{% static 'css/style5.css' %}" rel='stylesheet' type='text/css' media="all">
-    <!--//style sheet end here-->
-    <link href="//fonts.googleapis.com/css?family=Saira+Condensed:400,500,600,700" rel="stylesheet">
-  </head>
+<head>
+    <!-- ... (your head content) ... -->
+</head>
+<body>
     <h1 class="header-w3ls text-center text-light">
-      Complaint Registration
+        Complaint Registration
     </h1>
- 
 
+    <form action="{% url 'twelve' %}" method="post" class="container">
+        {% csrf_token %}
 
-        <form action="{% url 'twelve' %}" method="post" class="container ">
-          {% csrf_token %}
+        <div class="form-add-w3ls">
+            <input type="text" class='form-control mt-2' name="c_landmark" placeholder="Location" required="">
+        </div>
 
-          <div class="form-add-w3ls">	
-            <input type="text" class='form-control  mt-2' name="c_landmark" placeholder="Location" required="">
-          </div>
-          <div class="main">
+        <div class="main">
             <div class="form-left-w3l">
-              <!-- <input type="text" class='form-control  mt-2' name="bin_number" placeholder="Bin Number" required=""> -->
-              <label for="bin_number">Select Bin:</label>
-              <select name="bin_number" id="bin_number">
+                <select name="bin_number" id="bin_number" class='form-control mt-2'>
+                  <option value="" disabled selected>Select a Bin</option>
                   {% for bin in available_bins %}
                       <option value="{{ bin.Bin_id }}">{{ bin.Bin_name }}</option>
                   {% endfor %}
               </select>
+            </div>
 
-          <div class="form-control-w3l">
-            <textarea name="c_complaint" class='form-control  mt-2'  placeholder="Enter Complaint"></textarea>
-          </div>
-          
+            <div class="form-control-w3l">
+                <textarea name="c_complaint" class='form-control mt-2' placeholder="Enter Complaint"></textarea>
+            </div>
+            
             <input class="btn btn-light mt-2" type="submit" value="Submit">
-      
-        </form>
-
- 
-
-  
-  {% endblock %}
+        </div>
+    </form>
+</body>
+</html>
+{% endblock %}
