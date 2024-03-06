@@ -17,8 +17,8 @@ def export_bin(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="Bins.csv"'
     writer = csv.writer(response)
-    writer.writerow(['Bin Name','Bin color','Bin Address1','Bin Address2 ','Bin Address3', 'Zip code'])
-    registration = queryset.values_list('Bin_name','Bin_color','Bin_address1','Bin_address2','Bin_address3','pincode')
+    writer.writerow(['Bin Name','Bin color','Bin Address1' 'Zip code'])
+    registration = queryset.values_list('Bin_name','Bin_color','Bin_address1','pincode')
     for i in registration:
         writer.writerow(i)
     return response
@@ -28,7 +28,7 @@ export_bin.short_description = 'Export to csv'
 
 
 class RegAdmin(admin.ModelAdmin):
-    list_display = ['Bin_name','Bin_color','Bin_address1','Bin_address2','Bin_address3','pincode']
+    list_display = ['Bin_name','Bin_color','Bin_address1','pincode']
     actions = [export_bin]
 admin.site.register(Bins,RegAdmin)
 
