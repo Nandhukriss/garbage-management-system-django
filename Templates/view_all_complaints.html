@@ -9,7 +9,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Landmark</th>
-                <th scope="col">Bin Number</th>
+                <th scope="col">Bin Name</th>
                 <th scope="col">Complaint</th>
                 <th scope="col">Status</th>
             </tr>
@@ -19,7 +19,7 @@
                 <tr>
                     <td>{{ complaint.complaint_id }}</td>
                     <td>{{ complaint.c_landmark }}</td>
-                    <td>{{ complaint.bin_number }}</td>
+                    <td>{{ complaint.bin.Bin_name }}</td>
                     <td >
                                         <!-- Button trigger modal -->
                     <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
