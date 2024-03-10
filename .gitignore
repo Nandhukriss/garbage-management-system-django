@@ -1,10 +1,5 @@
 venv/
-~$quirement.docx
-feasibility.docx
-Figma.png
-GarbageAbstract (new).pdf
-Requirement.docx
-Seminar Abstract.docx
-Table Design(Final).docx
-UML Diagram(Final).docx
-UML Diagram(new).docx
+other/
+*.docx
+*.png
+*.pdf

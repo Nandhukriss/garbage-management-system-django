@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.shortcuts import render,redirect
 from .models import Bins,complaintpost,Driver,workupdation
-def hom(request):
+def home(request):
     return render(request, 'index.html')
 def registration(request):
     return render(request, 'registration.html')
@@ -18,15 +18,15 @@ def service(request):
     return render(request, 'services.html')
 
 
-def Views_bin(request):
+# def Views_bin(request):
 
-    driver = Driver.objects.filter(user=request.user)  
+#     driver = Driver.objects.filter(user=request.user)  
 
-    # Get the allocated bins associated with the driver
-    # viewbin = driver.Allocatted_bin.all()
-    viewbin = Bins.objects.filter()
+#     # Get the allocated bins associated with the driver
+#     # viewbin = driver.Allocatted_bin.all()
+#     viewbin = Bins.objects.filter()
 
-    return render(request,"see.html",{'Bins':viewbin})
+#     return render(request,"see.html",{'Bins':viewbin})
 
 def complaint(request):
     if request.method == 'POST':

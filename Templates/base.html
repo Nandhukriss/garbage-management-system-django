@@ -27,7 +27,7 @@
 			<li><a href="{% url 'home' %}" class="nav-link px-2 text-light ">Home</a></li>
 			<li><a href="{% url 'services' %}" class="nav-link px-2 text-light">Services</a></li>
 			{% if user.is_authenticated and user.is_customer %}
-			<li><a href="{% url 'twelve' %}" class="nav-link px-2 text-light">Complaint Now</a></li>
+			<li><a href="{% url 'post-complaint' %}" class="nav-link px-2 text-light">Complaint Now</a></li>
 			<li><a href="{% url 'view_all_complaints' %}" class="nav-link px-2 text-light">Your Complaints</a></li>
 			{% endif %}
 			{% if user.is_authenticated and user.is_driverreg %}
