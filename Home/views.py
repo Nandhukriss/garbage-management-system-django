@@ -63,12 +63,27 @@ def view_all_complaints(request):
 
 # @login_required(login_url='login')  # Redirect to login page if not logged in
 
+# def driver_complaints(request):
+#     # Get the current user (assuming the user is a driver)
+#     current_user = request.user.driver
+
+#     # Fetch all complaints related to the current driver
+#     driver_complaints = workupdation.objects.filter(name=current_user).order_by('-Date', '-Time')
+
+#     return render(request, 'view_assigned_complaints.html', {'driver_complaints': driver_complaints})
+
+
 def driver_complaints(request):
     # Get the current user (assuming the user is a driver)
-    current_user = request.user.driver
+    current_user = request.user
 
-    # Fetch all complaints related to the current driver
-    driver_complaints = workupdation.objects.filter(name=current_user).order_by('-Date', '-Time')
+    # Fetch the driver object associated with the current user
+    driver = Driver.objects.get(user=current_user)
+
+    # Fetch all bins related to the current driver
+    driver_bins = driver.bins_set.all()
+
+    # Fetch all complaints related to the bins of the current driver
+    driver_complaints = complaintpost.objects.filter(bin__in=driver_bins).order_by('-complaint_id')
 
     return render(request, 'view_assigned_complaints.html', {'driver_complaints': driver_complaints})
-

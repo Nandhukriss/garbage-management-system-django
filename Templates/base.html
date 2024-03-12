@@ -13,10 +13,39 @@
 	<link href="//fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
     <meta charset="UTF-8">
     <title>GMS</title>
+	<style>
+		/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #cbbcb1;
+}
+
+.navbar-scrolled {
+    background-color: #ffffff; /* Specify the color you want */
+    color: #090909;
+    transition: background-color 0.4s ease; /* Add a smooth transition effect */
+    
+  }
+
+	</style>
 </head>
-<body class="bg-success ">
+<body class="bg-success " >
 	<div class="container-fluid">
-		<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+		<nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom fixed-top " id="navbar">
 		  <div class="col-md-3 mb-2 mb-md-0">
 			<a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
 			  <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
@@ -51,7 +80,7 @@
 		  {% else %}
 		  <div class="col-md-3 text-end">
 			<a href="{% url 'login' %}"  class="btn btn-outline-light me-2">Login</a>
-			<a href="{% url 'registration1' %}" class="btn btn-light">Sign-up</a>
+			<a href="{% url 'registration1' %}" class="btn btn-light me-2 ">Sign-up</a>
 		  </div>
 		
 			</ul>
@@ -81,6 +110,53 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </script>
+<script>
+	// Get the navbar element
+var navbar = document.getElementById("navbar");
+
+// Add a scroll event listener
+window.addEventListener("scroll", function() {
+  // Check if the user has scrolled down
+  if (window.scrollY > 0) {
+    // If scrolled down, add the class to change the background color
+    navbar.classList.add("navbar-scrolled");
+    toggleElementColors('text-light', 'text-success');
+    toggleButtonColors('btn-outline-light', 'btn-outline-success', 'btn-light', 'btn-success');
+  } else {
+    // If scrolled back to the top, remove the class
+    navbar.classList.remove("navbar-scrolled");
+    toggleElementColors('text-success', 'text-light');
+    toggleButtonColors('btn-outline-success', 'btn-outline-light', 'btn-success', 'btn-light');
+  }
+});
+
+function toggleElementColors(currentClass, newClass) {
+  var listItems = document.querySelectorAll('.nav-link.' + currentClass);
+  listItems.forEach(function(item) {
+    item.classList.remove(currentClass);
+    item.classList.add(newClass);
+  });
+}
+
+function toggleButtonColors(currentClass1, newClass1, currentClass2, newClass2) {
+  var loginButton = document.querySelector('.' + currentClass1);
+  var signupButton = document.querySelector('.' + currentClass2);
+  var logout = document.querySelector('.' + currentClass2);
+
+  if (loginButton && signupButton) {
+    loginButton.classList.remove(currentClass1);
+    loginButton.classList.add(newClass1);
+
+    signupButton.classList.remove(currentClass2);
+    signupButton.classList.add(newClass2);
+  }
+  if (logout) {
+    logout.classList.remove(currentClass2);
+    logout.classList.add(newClass2);
+  }
+}
+
+  </script>
 
 </body>
 </html>

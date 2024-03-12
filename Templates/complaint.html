@@ -8,11 +8,11 @@
     <!-- ... (your head content) ... -->
 </head>
 <body>
-    <h1 class="header-w3ls text-center text-light">
+    <h1 class="header-w3ls text-center text-light" style="margin-top: 10rem;">
         Complaint Registration
     </h1>
 
-    <form action="{% url 'twelve' %}" method="post" class="container">
+    <form action="{% url 'post-complaint' %}" method="post" class="container">
         {% csrf_token %}
 
         <div class="form-add-w3ls">
