@@ -9,9 +9,6 @@ from django.contrib.auth import authenticate,login
 from django.http import HttpResponse
 from .models import Account
 from django.views.decorators.cache import cache_control
-
-
-
 # from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
@@ -23,20 +20,7 @@ from django.contrib.sites.shortcuts import get_current_site
 
 # Create your views here.
 
-def index(request):
-    return render(request,'index.html')
-def base(request):
-    return render(request,'base.html')
-def about(request):
-    return render(request,'about.html')
-def contact(request):
-    return render(request,'contact.html')
-def services(request):
-    return render(request,'services.html')
-def registration(request):
-    return render(request,'registration1.html')
-def home2(request):
-    return render(request,'home2.html')
+
 def signup(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
@@ -92,19 +76,6 @@ def login(request):
             return redirect('login')
 
     return render(request, 'login.html')
-
-# def user_login(request):
-#     if request.method=='POST':
-#         username=request.POST.get('username')
-#         pass1=request.POST.get('password')
-#         user=authenticate(request,username=username,password=pass1)
-#         if user is not None:
-#             login(request,user)
-#             return redirect('view_post')
-#         else:
-#             messages.error(request, 'Incorrect username or password')
-        
-#     return render(request,"login.html")
 
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)

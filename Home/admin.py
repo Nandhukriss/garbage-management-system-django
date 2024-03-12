@@ -89,8 +89,8 @@ def export_vehicle(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="vehicle.csv"'
     writer = csv.writer(response)
-    writer.writerow(['Registered No','Registered Owner','Registered Address','Makers Class', 'Vehicle Class','Engine','Insurance'])
-    registration = queryset.values_list('register_no','regd_owner','reg_address','makers_class','vehicle_class','engine','insurance')
+    writer.writerow(['Registered No','Registered Address','Makers Class', 'Vehicle Class','Engine','Insurance'])
+    registration = queryset.values_list('register_no','makers_class','vehicle_class','engine','insurance')
     for i in registration:
         writer.writerow(i)
     return response
@@ -100,7 +100,7 @@ export_vehicle.short_description = 'Export to csv'
 
 
 class RegAdmin(admin.ModelAdmin):
-    list_display = ['register_no','regd_owner','reg_address','makers_class','vehicle_class','engine','insurance']
+    list_display = ['register_no','makers_class','vehicle_class','engine','insurance']
     actions = [export_vehicle]
 admin.site.register(vehicle,RegAdmin)
 

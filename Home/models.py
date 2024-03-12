@@ -7,8 +7,8 @@ from django.conf import settings
 class vehicle(models.Model):
     vehicle_id = models.AutoField(primary_key=True)
     register_no=models.CharField(max_length=100)
-    regd_owner=models.CharField(max_length=100)
-    reg_address=models.CharField(max_length=100)
+    # regd_owner=models.CharField(max_length=100)
+    # reg_address=models.CharField(max_length=100)
     makers_class=models.CharField(max_length=100)
     vehicle_class=models.CharField(max_length=100)
     fuel=models.CharField(max_length=100)
@@ -39,22 +39,6 @@ class scheduleingday(models.Model):
         return self.day
 
 
-class Bins(models.Model):
-    Bin_id = models.AutoField(primary_key=True)
-    Bin_name = models.CharField(max_length=100)
-    Bin_color = models.ForeignKey(bin_color, verbose_name='bin_color', on_delete=models.DO_NOTHING, default="")
-    Bin_location = models.ForeignKey(location, verbose_name='region', on_delete=models.DO_NOTHING, default="")
-    Bin_address1 = models.CharField(max_length=100)
-    pincode = models.BigIntegerField()
-    distance_KM = models.CharField(max_length=100)
-    total_time = models.TimeField(default=0)
-    Bin_date= models.DateField(default=0)
-    Bin_status = models.CharField(max_length=50)
-    collections_day = models.ForeignKey(scheduleingday,verbose_name='day',on_delete=models.DO_NOTHING,default="")
-    allocated_driver = models.ForeignKey("Driver", verbose_name='Allocated Driver', on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-            return self.Bin_name
 class Driver(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,default="")
     driver_id = models.AutoField(primary_key=True)
@@ -65,10 +49,26 @@ class Driver(models.Model):
     driver_licence = models.CharField(max_length=100)
     driver_vehicle = models.ForeignKey(vehicle, verbose_name='register_no', on_delete=models.DO_NOTHING,default="")
     driver_location = models.ForeignKey(location, verbose_name=' region', on_delete=models.DO_NOTHING,default="")
-    Allocatted_bin=models.ForeignKey(Bins,verbose_name='Bin_name',on_delete=models.DO_NOTHING,default="", null=True, blank=True)
+    # Allocatted_bin=models.ForeignKey(Bins,verbose_name='Bin_name',on_delete=models.DO_NOTHING,default="", null=True, blank=True)
     driver_image = models.ImageField()
     def __str__(self):
             return self.name
+class Bins(models.Model):
+    Bin_id = models.AutoField(primary_key=True)
+    Bin_name = models.CharField(max_length=100)
+    Bin_color = models.ForeignKey(bin_color, verbose_name='bin_color', on_delete=models.DO_NOTHING, default="")
+    Bin_location = models.ForeignKey(location, verbose_name='region', on_delete=models.DO_NOTHING, default="")
+    Bin_address1 = models.CharField(max_length=100)
+    pincode = models.BigIntegerField()
+    # distance_KM = models.CharField(max_length=100)
+    # total_time = models.TimeField(default=0)
+    # Bin_date= models.DateField(default=0)
+    Bin_status = models.CharField(max_length=50)
+    collections_day = models.ForeignKey(scheduleingday,verbose_name='day',on_delete=models.DO_NOTHING,default="")
+    allocated_driver = models.ForeignKey(Driver, verbose_name='Allocated Driver', on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+            return self.Bin_name
 
 
 class complaintpost(models.Model):
