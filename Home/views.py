@@ -87,3 +87,16 @@ def driver_complaints(request):
     driver_complaints = complaintpost.objects.filter(bin__in=driver_bins).order_by('-complaint_id')
 
     return render(request, 'view_assigned_complaints.html', {'driver_complaints': driver_complaints})
+
+def mark_complaint_done(request, complaint_id):
+    if request.method == 'POST':
+        complaint = complaintpost.objects.get(complaint_id=complaint_id)
+        complaint.status = True
+        complaint.save()
+        return redirect('view_assigned_complaints')
+def mark_complaint_undone(request, complaint_id):
+    if request.method == 'POST':
+        complaint = complaintpost.objects.get(complaint_id=complaint_id)
+        complaint.status = False
+        complaint.save()
+        return redirect('view_assigned_complaints')
