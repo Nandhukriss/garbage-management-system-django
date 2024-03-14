@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.shortcuts import render,redirect
 from .models import Bins,complaintpost,Driver,workupdation
-def hom(request):
+def home(request):
     return render(request, 'index.html')
 def registration(request):
     return render(request, 'registration.html')
@@ -18,15 +18,15 @@ def service(request):
     return render(request, 'services.html')
 
 
-def Views_bin(request):
+# def Views_bin(request):
 
-    driver = Driver.objects.filter(user=request.user)  
+#     driver = Driver.objects.filter(user=request.user)  
 
-    # Get the allocated bins associated with the driver
-    # viewbin = driver.Allocatted_bin.all()
-    viewbin = Bins.objects.filter()
+#     # Get the allocated bins associated with the driver
+#     # viewbin = driver.Allocatted_bin.all()
+#     viewbin = Bins.objects.filter()
 
-    return render(request,"see.html",{'Bins':viewbin})
+#     return render(request,"see.html",{'Bins':viewbin})
 
 def complaint(request):
     if request.method == 'POST':
@@ -63,12 +63,40 @@ def view_all_complaints(request):
 
 # @login_required(login_url='login')  # Redirect to login page if not logged in
 
+# def driver_complaints(request):
+#     # Get the current user (assuming the user is a driver)
+#     current_user = request.user.driver
+
+#     # Fetch all complaints related to the current driver
+#     driver_complaints = workupdation.objects.filter(name=current_user).order_by('-Date', '-Time')
+
+#     return render(request, 'view_assigned_complaints.html', {'driver_complaints': driver_complaints})
+
+
 def driver_complaints(request):
     # Get the current user (assuming the user is a driver)
-    current_user = request.user.driver
+    current_user = request.user
 
-    # Fetch all complaints related to the current driver
-    driver_complaints = workupdation.objects.filter(name=current_user).order_by('-Date', '-Time')
+    # Fetch the driver object associated with the current user
+    driver = Driver.objects.get(user=current_user)
+
+    # Fetch all bins related to the current driver
+    driver_bins = driver.bins_set.all()
+
+    # Fetch all complaints related to the bins of the current driver
+    driver_complaints = complaintpost.objects.filter(bin__in=driver_bins).order_by('-complaint_id')
 
     return render(request, 'view_assigned_complaints.html', {'driver_complaints': driver_complaints})
 
+def mark_complaint_done(request, complaint_id):
+    if request.method == 'POST':
+        complaint = complaintpost.objects.get(complaint_id=complaint_id)
+        complaint.status = True
+        complaint.save()
+        return redirect('view_assigned_complaints')
+def mark_complaint_undone(request, complaint_id):
+    if request.method == 'POST':
+        complaint = complaintpost.objects.get(complaint_id=complaint_id)
+        complaint.status = False
+        complaint.save()
+        return redirect('view_assigned_complaints')
