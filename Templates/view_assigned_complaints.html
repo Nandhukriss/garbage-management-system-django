@@ -16,6 +16,7 @@
                     <th>Bin Color</th>
                     <th>Bin Location</th>
                     <th>Status</th>
+                    <th>Update Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +35,23 @@
                     {% else %}
                     <td  class="text-danger  ">Not Collected</td>
                     {% endif  %}
+                    <td>
+                        {% if complaint.status %}
+                        <form action="{% url 'mark_complaint_undone' complaint.complaint_id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-success ">✓</button>
+                        </form>
+                        
+                        {% else %}
+                        
+                        <form action="{% url 'mark_complaint_done' complaint.complaint_id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-success ">Mark as Done</button>
+                        </form>
+
+                        {% endif  %}
+
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
