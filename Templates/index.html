@@ -43,6 +43,19 @@
       100% { transform: rotate(360deg); }
     }
 
+	/* WhatsApp Chat Icon */
+#whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it appears on top of other elements */
+    transition: transform 0.3s ease-in-out;
+}
+
+#whatsapp-chat:hover {
+    transform: scale(1.1); /* Scale up on hover for a floating effect */
+}
+
 
 	  </style>
 
@@ -55,56 +68,35 @@
     <div class="spinner"></div>
   </div>
 	</section> 
-	<!-- //banner -->
-	<div class="container px-4 py-5" id="hanging-icons">
-		<h2 class="pb-2 display-6 mb-2 text-light fw-bold ">Garbage Management <span>Easy to Manage Waste</span></h2>
-		<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-		  <div class="col d-flex align-items-start">
-			<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+	<a  id="whatsapp-chat" href="https://wa.me/9074192503" class="border border-2 p-3 rounded-5 "  target="_blank" 
+		data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left">
+		<i class="fa-brands fa-whatsapp fa-2xl"style="color: #63E6BE;" ></i>
 
-			</div>
-			<div class="card">
+    </a>
 
-				<div class="bg-light rounded-1 p-3 card-content" style="height: 350px;cursor: pointer;">
-				  <h3 class="fs-2 text-body-emphasis"> <span class="me-3"><i class="fa-solid fa-dumpster"></i></span> Waste</h3>				
-				  <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.Waste' is any unwanted or unuseful material. These are objects that have been discarded since these materials aren't functioning anymore. Waste can be in any form (liquid, solid or gas), although generally, waste is solid.</p>
-	
-				</div>
-			</div>
+	<div class="container col-xxl-8 px-4 py-5 bg-light rounded-3 ">
+		<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+		  <div class="col-10 col-sm-8 col-lg-6">
+			<img src="https://i.pinimg.com/736x/aa/5b/29/aa5b29b8c78608701a667407e56d5a33.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
 		  </div>
-		  <div class="col d-flex align-items-start">
-			<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-
-			</div>
-			<div class="bg-light rounded-1 p-3 "  style="height: 350px;cursor: pointer;">
-			  <h3 class="fs-2 text-body-emphasis"><span class="me-3"><i class="fa-solid fa-dumpster"></i></span>Waste Management</h3>
-			  <p>A waste management system is the strategy an organization uses to dispose, reduce, reuse, and prevent waste. Possible waste disposal methods are recycling, composting, incineration, landfills, bioremediation, waste to energy, and waste minimization.
-
-			  </p>
-
-			</div>
-		  </div>
-		  <div class="col d-flex align-items-start">
-			<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-
-			</div>
-			<div class="bg-light rounded-1 p-3"  style="height: 350px;cursor: pointer;">
-			  <h3 class="fs-2 text-body-emphasis"><span class="me-3"><i class="fa-solid fa-dumpster"></i></span>Recycling</h3>
-			  <p>Recycling of waste is defined in the Waste Framework Directive as any recovery operation by which waste materials are reprocessed into products, materials or substances whether for the original or other purposes
-
-			  </p>
-
+		  <div class="col-lg-6">
+			<h1 class="display-5 fw-bold lh-1 mb-3">Garbage Management <span>Easy to Manage Waste</span></h2></h1>
+			<p class="lead">A waste management system is the strategy an organization uses to dispose, reduce, reuse, and prevent waste.</p>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+			  <a href="{% url 'contact' %}" class="btn btn-success  btn-lg px-4 me-md-2" fdprocessedid="l8ut7w">Contact Now </a>
+			  <a href="{% url 'about' %}" class="btn btn-outline-secondary btn-lg px-4" fdprocessedid="1dc24b">About Us</a>
 			</div>
 		  </div>
 		</div>
 	  </div>
 
+
+
 <section class="py-3 py-md-5 py-xl-8">
 	<div class="container">
 	  <div class="row">
 		<div class="col-12 col-md-10 col-lg-8">
-		  <h3 class="display-6 mb-2 text-light fw-bold">Testimonials</h3>
-		  <h2 class="mb-4 text-black ">Our valued clients' testimonials speak volumes about our work's power.</h2>
+		  <h3 class="display-6 mb-2 text-light fw-bold ">Testimonials</h3>
 		</div>
 	  </div>
 	</div>
