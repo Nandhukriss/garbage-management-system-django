@@ -41,11 +41,13 @@
     
   }
 
+
+
 	</style>
 </head>
 <body class="bg-success " >
 	<div class="container-fluid">
-		<a class="navbar-brand" href="#"><span class="text-light fw-semibold fs-3">GMS</span> <img src="https://clipground.com/images/garbage-truck-png-2.png" alt="logo" width="100px"></a>
+		<a class="navbar-brand" href="#"><span class="text-light fw-semibold fs-3" id="gms">GMS</span> <img src="https://clipground.com/images/garbage-truck-png-2.png" alt="logo" width="100px"></a>
 		<nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom fixed-top  shadow-lg " id="navbar">
 		  <div class="col-md-3 mb-2 mb-md-0">
 			<a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
@@ -54,18 +56,18 @@
 		  </div>
 		  
 		  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-			<li><a href="{% url 'home' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light ">Home</a></li>
-			<li><a href="{% url 'services' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light ">Services</a></li>
+			<li><a href="{% url 'home' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Home</a></li>
+			<li><a href="{% url 'services' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Services</a></li>
 			{% if user.is_authenticated and user.is_customer %}
-			<li><a href="{% url 'post-complaint' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light ">Complaint Now</a></li>
-			<li><a href="{% url 'view_all_complaints' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light ">Your Complaints</a></li>
+			<li><a href="{% url 'post-complaint' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Complaint Now</a></li>
+			<li><a href="{% url 'view_all_complaints' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Your Complaints</a></li>
 			{% endif %}
 			{% if user.is_authenticated and user.is_driverreg %}
-			<li><a href="{% url 'view_assigned_complaints' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light ">Jobs</a></li>
+			<li><a href="{% url 'view_assigned_complaints' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Jobs</a></li>
 			{% endif %}
 			
-			<li><a href="{% url 'contact' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light ">Contact</a></li>
-			<li><a href="{% url 'about' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light ">About</a></li>
+			<li><a href="{% url 'contact' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light up ">Contact</a></li>
+			<li><a href="{% url 'about' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">About</a></li>
 		  </ul>
 
 		  {% if request.user.is_authenticated %}
@@ -113,7 +115,7 @@
 </script>
 <script>
 	// Get the navbar element
-var navbar = document.getElementById("navbar");
+let navbar = document.getElementById("navbar");
 
 // Add a scroll event listener
 window.addEventListener("scroll", function() {

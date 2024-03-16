@@ -5,9 +5,9 @@
     <h1 class="text-center" style="margin-top: 10rem;">Driver Complaints</h1>
 
     {% if driver_complaints %}
-        <table class="table table-bordered mt-4">
+        <table class="table table-light table-striped mt-2 table-hover table-responsive">
             <thead>
-                <tr>
+                <tr class="table-success">
                     <th>Bin Name</th>
                     <th>Region</th>
                     <!-- <th>Date</th>
@@ -22,18 +22,18 @@
             <tbody>
                 {% for complaint in driver_complaints %}
                 <tr>
-                    <td>{{ complaint.bin.Bin_name }}</td>
-                    <td>{{ complaint.bin.Bin_location.region }}</td>
+                    <td class="text-capitalize ">{{ complaint.bin.Bin_name }}</td>
+                    <td class="text-capitalize ">{{ complaint.bin.Bin_location.region }}</td>
                     <!-- <td>{{ complaint.Date }}</td>
                     <td>{{ complaint.Time }}</td> -->
-                    <td>{{ complaint.bin.collections_day.day }}</td>
-                    <td>{{ complaint.bin.Bin_color.bin_color }}</td>
-                    <td>{{ complaint.bin.Bin_location.region }}</td>
+                    <td class="text-capitalize ">{{ complaint.bin.collections_day.day }}</td>
+                    <td class="text-capitalize ">{{ complaint.bin.Bin_color.bin_color }}</td>
+                    <td class="text-capitalize ">{{ complaint.bin.Bin_location.region }}</td>
                     {% if complaint.status %}
-                    <td class="text-success ">Collected</td>
+                    <td class="text-success text-capitalize">Collected</td>
                     
                     {% else %}
-                    <td  class="text-danger  ">Not Collected</td>
+                    <td  class="text-danger text-capitalize ">Not Collected</td>
                     {% endif  %}
                     <td>
                         {% if complaint.status %}
