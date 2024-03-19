@@ -72,7 +72,8 @@
 
 		  {% if request.user.is_authenticated %}
 		
-			  <div class="col-md-3 text-end">
+		  <div class="col-md-3 text-end">
+				<a href="{% url 'change_password' %}" class="btn btn-danger ">Change Password</a>
 				<a  class="btn btn-secondary  ">
 
 					<i class="fa fa-user text-light"></i> <span class="ms-1 text-light">{{request.user.first_name|capfirst}}</span>
