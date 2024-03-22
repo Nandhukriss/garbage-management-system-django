@@ -1,18 +1,14 @@
 from django.contrib import admin
 import csv
 from django.http import HttpResponse
-from .models import vehicle,bin_color,Bins,location,Driver, complaintpost,workupdation,scheduleingday
+from .models import vehicle,bin_color,Bins,location,Driver, complaintpost
 from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
-# admin.site.register(Bins)
-# admin.site.register(vehicle)
-# admin.site.register(employee)
+
 admin.site.register(bin_color)
 admin.site.register(location)
-# admin.site.register(Driver)
 admin.site.register(complaintpost)
-admin.site.register(workupdation)
-# admin.site.register(scheduleingday)
+
 def export_bin(modeladmin, request, queryset):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="Bins.csv"'
@@ -47,10 +43,7 @@ def export_driver(modeladmin, request, queryset):
 export_driver.short_description = 'Export to csv'
 
 
-# class RegAdmin(admin.ModelAdmin):
-#     list_display = ['name','driver_address','driver_email','driver_phone','driver_licence']
-#     actions = [export_driver]
-# admin.site.register(Driver,RegAdmin)
+
 class RegAdmin(admin.ModelAdmin):
     list_display = ['name', 'driver_address', 'driver_email', 'driver_phone', 'driver_licence']
     actions = [export_driver]
@@ -77,11 +70,6 @@ def export_Day(modeladmin, request, queryset):
 
 export_Day.short_description = 'Export to csv'
 
-
-class RegAdmin(admin.ModelAdmin):
-    list_display = ['region','direction','day']
-    actions = [export_Day]
-admin.site.register(scheduleingday,RegAdmin)
 
 
 
