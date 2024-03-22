@@ -4,3 +4,4 @@ other/
 *.png
 *.pdf
 db.sqlite3
+.env

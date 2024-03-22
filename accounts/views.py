@@ -121,7 +121,7 @@ def forgotPassword(request):
             send_mail(
                 'Please activate your account',
                 message,
-                'garbages422@gmail.com',
+                'rohanjijovarghese@gmail.com',
                 [email],
                 fail_silently=False,
             )
@@ -135,6 +135,17 @@ def forgotPassword(request):
 
 
 def resetpassword_validate(request, uidb64, token):
+    """
+Validate the password reset link.
+
+Args:
+    request (HttpRequest): The current request.
+    uidb64 (str): The encoded user ID.
+    token (str): The password reset token.
+
+Returns:
+    HttpResponse: An HTTP response.
+"""
     try:
         uid = urlsafe_base64_decode(uidb64).decode()
         user = Account._default_manager.get(pk=uid)
