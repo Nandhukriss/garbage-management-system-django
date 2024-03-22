@@ -7,8 +7,6 @@ from django.conf import settings
 class vehicle(models.Model):
     vehicle_id = models.AutoField(primary_key=True)
     register_no=models.CharField(max_length=100)
-    # regd_owner=models.CharField(max_length=100)
-    # reg_address=models.CharField(max_length=100)
     makers_class=models.CharField(max_length=100)
     vehicle_class=models.CharField(max_length=100)
     fuel=models.CharField(max_length=100)
@@ -49,7 +47,6 @@ class Driver(models.Model):
     driver_licence = models.CharField(max_length=100)
     driver_vehicle = models.ForeignKey(vehicle, verbose_name='register_no', on_delete=models.DO_NOTHING,default="")
     driver_location = models.ForeignKey(location, verbose_name=' region', on_delete=models.DO_NOTHING,default="")
-    # Allocatted_bin=models.ForeignKey(Bins,verbose_name='Bin_name',on_delete=models.DO_NOTHING,default="", null=True, blank=True)
     driver_image = models.ImageField()
     def __str__(self):
             return self.name
@@ -82,15 +79,6 @@ class complaintpost(models.Model):
     def __str__(self):
         return self.c_landmark
     
-class workupdation(models.Model):
-    work_id = models.AutoField(primary_key=True)
-    Bin_id = models.ForeignKey(Bins,verbose_name='Bin_name',on_delete=models.DO_NOTHING,default="")
-    Location = models.ForeignKey(location,verbose_name='region',on_delete=models.DO_NOTHING,default="")
-    Time = models.TimeField(default=0)
-    Date = models.DateField(default=0)
-    status = models.CharField(max_length=100)
-    name = models.ForeignKey(Driver,verbose_name='driver_name',on_delete=models.DO_NOTHING,default="")
-
 
 
 
