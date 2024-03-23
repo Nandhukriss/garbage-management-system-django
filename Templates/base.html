@@ -56,25 +56,25 @@
 		  </div>
 		  
 		  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-			<li><a href="{% url 'home' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Home</a></li>
-			<li><a href="{% url 'services' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Services</a></li>
+			<li><a href="{% url 'home' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light up  {% if request.path == '/' %}bg-dark text-light {% endif %} ">Home</a></li>
+			<li><a href="{% url 'services' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up {% if request.path == '/service/' %} bg-dark text-light{% endif %}">Services</a></li>
 			{% if user.is_authenticated and user.is_customer %}
-			<li><a href="{% url 'post-complaint' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Complaint Now</a></li>
-			<li><a href="{% url 'view_all_complaints' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Your Complaints</a></li>
+			<li><a href="{% url 'post-complaint' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up {% if request.path == '/post-complaint' %}bg-dark text-light{% endif %}">Complaint Now</a></li>
+			<li><a href="{% url 'view_all_complaints' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up  {% if request.path == '/view-all-complaints/' %}bg-dark text-light{% endif %}">Your Complaints</a></li>
 			{% endif %}
 			{% if user.is_authenticated and user.is_driverreg %}
-			<li><a href="{% url 'view_assigned_complaints' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">Jobs</a></li>
+			<li><a href="{% url 'view_assigned_complaints' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up {% if request.path == '/view-assigned-complaints/' %}bg-dark text-light{% endif %}">Jobs</a></li>
 			{% endif %}
 			
-			<li><a href="{% url 'contact' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light up ">Contact</a></li>
-			<li><a href="{% url 'about' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up">About</a></li>
+			<li><a href="{% url 'contact' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light up   {% if request.path == '/contact/' %}bg-dark text-light{% endif %}">Contact</a></li>
+			<li><a href="{% url 'about' %}" class="nav-link px-2 text-light border border-2 rounded-4 mx-2 border-light  up {% if request.path == '/about/' %}bg-dark text-light{% endif %}">About</a></li>
 		  </ul>
 
 		  {% if request.user.is_authenticated %}
 		
 		  <div class="col-md-3 text-end">
 				<a href="{% url 'change_password' %}" class="btn btn-danger ">Change Password</a>
-				<a  class="btn btn-secondary  ">
+				<a  class="btn btn-dark   ">
 
 					<i class="fa fa-user text-light"></i> <span class="ms-1 text-light">{{request.user.first_name|capfirst}}</span>
 				</a>
