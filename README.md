@@ -1,35 +1,26 @@
 # Garbage Management System
 
 ## 🧑‍💻 Tech Stack 🧑‍💻
-<div class="row">
-  <div class="col">
-    💡 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="20"/> Python
-    💡 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="20"/> JavaScript
-    💡 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg" alt="SQLite" width="20"/> SQLite
-  </div>
-  <div class="col">
-    💡 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" width="20"/> HTML
-    💡<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="20"/> CSS
-    💡 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="20"/> Bootstrap
-  </div>
-</div>
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="20"/> Python
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="20"/> JavaScript
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg" alt="SQLite" width="20"/> SQLite
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" width="20"/> HTML
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="20"/> CSS
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" width="20"/> Bootstrap
 
-
-
-
-### 📌 Home Page 
+### 🚚 Home Page 🚚
 
 ![home page](https://github.com/rohanjijovarghese/garbage-management-system-django/assets/103727372/16fc66d4-5ee0-44ee-ac7e-6ede31bb89db)
 
-### 📌 Driver jobs 
+### 🚚 Driver jobs 🚚
 
 ![jobs](https://github.com/rohanjijovarghese/garbage-management-system-django/assets/103727372/c49b53e4-3697-4ee7-8107-209055520707)
 
-###  📌 Your Complaints(User) 
+###  🚚 Your Complaints(User) 🚚
 
 ![your complaints](https://github.com/rohanjijovarghese/garbage-management-system-django/assets/103727372/1bde45b4-6351-441b-b80a-b7634645ed2c)
 
-### 📌 Post Your Complaints  
+### 🚚 Post Your Complaints  🚚
 
 ![Post Your Complaints](https://github.com/rohanjijovarghese/garbage-management-system-django/assets/103727372/e723d150-4670-41f9-8587-0d848bb3f96e)
 
