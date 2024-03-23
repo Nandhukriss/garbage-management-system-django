@@ -1,8 +1,31 @@
 # Garbage Management System
 
-### Home Page 
+## 🧑‍💻 Tech Stack 🧑‍💻
 
-![home page](https://github.com/Nandhukriss/Nandhukriss/assets/103727372/cd77452b-76dd-4630-ada2-ff66a3a8c432)
+- ![Python](https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg) Python
+- ![JavaScript](https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg) JavaScript
+- ![SQLite](https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg) SQLite
+- ![HTML5](https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg) HTML
+- ![CSS3](https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg) CSS
+- ![Bootstrap](https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg) Bootstrap
+
+
+### 📌 Home Page 
+
+![home page](https://github.com/rohanjijovarghese/garbage-management-system-django/assets/103727372/16fc66d4-5ee0-44ee-ac7e-6ede31bb89db)
+
+### 📌 Driver jobs 
+
+![jobs](https://github.com/rohanjijovarghese/garbage-management-system-django/assets/103727372/c49b53e4-3697-4ee7-8107-209055520707)
+
+###  📌 Your Complaints(User) 
+
+![your complaints](https://github.com/rohanjijovarghese/garbage-management-system-django/assets/103727372/1bde45b4-6351-441b-b80a-b7634645ed2c)
+
+### 📌 Post Your Complaints  
+
+![Post Your Complaints](https://github.com/rohanjijovarghese/garbage-management-system-django/assets/103727372/e723d150-4670-41f9-8587-0d848bb3f96e)
+
 
 ## Installation
 
