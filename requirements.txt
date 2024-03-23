@@ -6,7 +6,7 @@ asyncio==3.4.3
 attrs==23.2.0
 disutils==1.4.32.post2
 Django
-django-crispy-forms==2.1
+django-crispy-forms==2.0
 django-jazzmin==2.6.0
 frozenlist==1.4.1
 idna==3.6
