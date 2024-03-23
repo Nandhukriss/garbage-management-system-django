@@ -51,7 +51,15 @@ def view_all_complaints(request):
 
 
 def driver_complaints(request):
-    # Get the current user (assuming the user is a driver)
+    """
+    This function retrieves all the complaints that are  a driver.
+
+    Parameters:
+        request (HttpRequest): The current request object
+
+    Returns:
+        HttpResponse: A response object with the rendered template
+    """
     current_user = request.user
 
     # Fetch the driver object associated with the current user

@@ -5,3 +5,7 @@ other/
 *.pdf
 db.sqlite3
 .env
+photos/
+db.sqlite3.backup
+accounts/__pycache__
+Garbage_Management/__pycache__
