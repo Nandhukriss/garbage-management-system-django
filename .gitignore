@@ -1,11 +1,15 @@
+# Ignore venv directory
 venv/
-other/
+# Ignore .docx, .png, .pdf files
 *.docx
 *.png
 *.pdf
-db.sqlite3
+# Ignore SQLite database files
+*.sqlite3
+*.sqlite3.backup
+# Ignore .env file
 .env
-photos/
-db.sqlite3.backup
-accounts/__pycache__
-Garbage_Management/__pycache__
+# Ignore photos directory
+/photos/
+# Ignore __pycache__ directories
+**/__pycache__/
