@@ -31,4 +31,4 @@ jobs:
     - name: Format Code with Black
       run: |
         pip install black
-        black .
+        black --diff .
